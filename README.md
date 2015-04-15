@@ -1,6 +1,6 @@
 # elbvss
 
-ELB Vulcand Server Synchronizer
+ELB Vulcand Server Synchronizer  
 ELB に紐付くインスタンスの状態に応じて、Vulcand server の削除・追加を行なう。
 
 ## 環境変数
