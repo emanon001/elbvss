@@ -23,8 +23,7 @@ module Elbvss
     end
 
     def sync
-      # instances = get_instances
-      instances = dummy_instances
+      instances = get_instances
       delete_target_servers =
         get_delete_target_vulcand_servers(get_vulcand_backends, instances)
       delete_vulcand_servers delete_target_servers
@@ -144,30 +143,6 @@ module Elbvss
           ip: m['primaryIP']
         }
       end
-    end
-
-    def dummy_instances
-      # TODO: delete
-      [
-        Instance.new(
-          instance_id: 'foo',
-          in_service: true,
-          ip_address: '172.17.8.101',
-          machine_id: 'foo'
-        ),
-        Instance.new(
-          instance_id: 'dummy1',
-          in_service: false,
-          ip_address: '172.17.8.150',
-          machine_id: 'dummy'
-        ),
-        Instance.new(
-          instance_id: 'dummy2',
-          in_service: true,
-          ip_address: '172.17.8.151',
-          machine_id: 'dummy2'
-        )
-      ]
     end
   end
 end
