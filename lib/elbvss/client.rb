@@ -35,7 +35,7 @@ module Elbvss
     private
 
     def add_machine_id_to(instance_builders)
-      machines = get_machines
+      machines = get_fleet_machines
       instance_builders.map do |i|
         machine = machines.find {|m| m[:ip] == i.ip_address }
         machine_id = machine ? machine[:id] : nil
@@ -44,7 +44,7 @@ module Elbvss
     end
 
     def add_ip_address_to(instance_builders)
-      ip_addresses = get_ip_addresses instances
+      ip_addresses = get_ip_addresses instance_builders
       instance_builders.map do |i|
         ip_info = ip_addresses.find {|x| x[:id] == i.instance_id }
         ip = ip_info ? ip_info[:ip] : nil
