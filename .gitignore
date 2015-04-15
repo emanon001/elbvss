@@ -1,0 +1,14 @@
+# Ignore bundler config.
+/.bundle
+/vendor/bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+.DS_Store
+
+# Ignore direnv file.
+.envrc
+
+# Ignore jetbranins IDE config.
+.idea

@@ -1,0 +1,29 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    aws-sdk (2.0.38)
+      aws-sdk-resources (= 2.0.38)
+    aws-sdk-core (2.0.38)
+      builder (~> 3.0)
+      jmespath (~> 1.0)
+      multi_json (~> 1.0)
+    aws-sdk-resources (2.0.38)
+      aws-sdk-core (= 2.0.38)
+    builder (3.2.2)
+    etcd (0.3.0)
+      mixlib-log
+    excon (0.45.1)
+    fleet-api (1.1.0)
+      excon (>= 0.27.4)
+    jmespath (1.0.2)
+      multi_json (~> 1.0)
+    mixlib-log (1.6.0)
+    multi_json (1.11.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  aws-sdk
+  etcd
+  fleet-api
