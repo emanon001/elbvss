@@ -14,14 +14,14 @@ module Elbvss
 
     def self.from_etcd_backend(backend)
       server = backend.children.find {|c| c.key.end_with? '/servers' }
-      fail unless server
-
-      servers = server.children.map do |s|
-        VulcandServer.new(
-          key: s.key,
-          value: s.value
-        )
-      end
+      servers =
+        if server
+          server.children.map do |s|
+            VulcandServer.new(key: s.key, value: s.value)
+          end
+        else
+          []
+        end
 
       VulcandBackend.new(
         key: backend.key,
